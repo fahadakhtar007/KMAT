@@ -6,10 +6,12 @@
     Author     : Kamran
 --%>
 
-<sql:query var="process" dataSource="jdbc/KMAT">
+<%--
+<--<sql:query var="process" dataSource="jdbc/KMAT">
 	SELECT * FROM process_tbl
 </sql:query>
-	
+--%>
+
 <table border="1">
 	<!-- column headers -->
 	<tr>
