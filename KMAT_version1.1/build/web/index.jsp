@@ -1,34 +1,8 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : index
     Created on : Aug 24, 2015, 8:25:17 AM
     Author     : Kamran
 --%>
-
-<%--
-<--<sql:query var="process" dataSource="jdbc/KMAT">
-	SELECT * FROM process_tbl
-</sql:query>
---%>
-
-<table border="1">
-	<!-- column headers -->
-	<tr>
-	<c:forEach var="columnName" items="${process.columnNames}">
-		<th><c:out value="${columnName}"/></th>
-	</c:forEach>
-</tr>
-<!-- column data -->
-<c:forEach var="row" items="${process.rowsByIndex}">
-	<tr>
-	<c:forEach var="column" items="${row}">
-		<td><c:out value="${column}"/></td>
-	</c:forEach>
-	</tr>
-</c:forEach>
-</table>
-
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
 <%@page import="coreservlets.Tree"%>
@@ -91,6 +65,9 @@
         <div id="wrapper">
 
         <!-- Sidebar -->
+        
+        
+        
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -98,29 +75,47 @@
                        KMAT
                     </a>
                 </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
+                
+<!--                <li>
+                    <a href="#">Users</a>
+                </li>-->
+              
+                
                 <li>
                     <a href="#" onClick="loadContent(2)">Create Project</a>
                 </li>
                 <li>
+                    <a href="#" onClick="loadContent(6)">View Projects</a>
+                </li>
+                
+    
+                
+                <li>
                     <a href="#" onClick="loadContent(3)">Create Group</a>
                 </li>
                 <li>
-                    <a href="#" onClick="loadContent(4)">Add Process</a>
+                    <a href="#" onClick="loadContent(7)">View Groups</a>
                 </li>
-              
+                <li>
+                    <a href="#" onClick="loadContent(8)">Create Department</a>
+                </li>
+                <li>
+                    <a href="#" onClick="loadContent(9)">View Departments</a>
+                </li>
+                <li>
+                    <a href="#" onClick="loadContent(4)">Create Process</a>
+                </li>
+                <li>
+                    <a href="#">View Processes</a>
+                </li>
                 
                 <li>
-                    <a href="#" onClick="loadContent(6)">Projects</a>
+                    <a href="#">Resources</a>
                 </li>
                 <li>
-                    <a href="#" onClick="loadContent(7)">Groups</a>
+                    <a href="#">Concept Map</a>
                 </li>
-                <li>
-                    <a href="#">Processes</a>
-                </li>
+   
                 
             </ul>
         </div>
@@ -218,6 +213,10 @@
                     $('#page-content-wrapper').load('projects.jsp');
                 else if(itemNum === 7 )
                     $('#page-content-wrapper').load('groups.jsp');
+                else if(itemNum === 8 )
+                    $('#page-content-wrapper').load('createDepartment.jsp');
+                else if(itemNum === 9 )
+                    $('#page-content-wrapper').load('departments.jsp');
             }
         </script>
             
