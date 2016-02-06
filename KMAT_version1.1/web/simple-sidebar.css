@@ -74,7 +74,7 @@
     text-decoration: none;
     color: #fff;
     /*background: rgba(255,255,255,0.2);*/
-    background: #e74c3c;
+    /*background: #e74c3c;*/
 }
 
 .sidebar-nav > .sidebar-brand {
@@ -91,6 +91,16 @@
     color: #fff;
     background: none;
 }
+.active{
+    background: #e74c3c;
+}
+
+
+
+
+
+
+
 
 @media(min-width:768px) {
     #wrapper {

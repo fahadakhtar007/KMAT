@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>KMAT</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="simple-sidebar.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
     </head> <!--head-->
@@ -68,54 +69,98 @@
         
         
         
-        <div id="sidebar-wrapper">
+        <div id="sidebar-wrapper" class="nav-side-menu">
+            
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#" id="focus">
-                       KMAT
-                    </a>
+               
+                <li class="sidebar-brand active">
+                    <a href="#"> KMAT </a>
                 </li>
                 
-<!--                <li>
-                    <a href="#">Users</a>
-                </li>-->
+                <!--Projects-->
+
+                <li data-toggle="collapse" data-target="#projects-list" class="collapsed" id="projects">
+                    <a href="#">Projects <i class="fa fa-chevron-down" style="margin-left: 130px;"></i></a>
+                </li>  
+                
               
-                
                 <li>
-                    <a href="#" onClick="loadContent(2)">Create Project</a>
-                </li>
-                <li>
-                    <a href="#" onClick="loadContent(6)">View Projects</a>
+                    <ul class="sub-menu collapse" id="projects-list">
+                        <li>
+                            <a href="#" onClick="loadContent(2)"><i class="fa fa-chevron-right"></i> Create Project</a>
+                        </li>
+                        <li>
+                            <a href="#" onClick="loadContent(6)"><i class="fa fa-chevron-right"></i> View Projects</a>
+                        </li>
+                    </ul>
                 </li>
                 
     
+                <!--Groups-->
                 
+                
+               <li data-toggle="collapse" data-target="#groups-list" class="collapsed" id="groups">
+                  <a href="#">Groups <i class="fa fa-chevron-down" style="margin-left: 132px;"></i></a>
+                </li>  
+                
+              
                 <li>
-                    <a href="#" onClick="loadContent(3)">Create Group</a>
+                    <ul class="sub-menu collapse collapsable" id="groups-list">
+                        <li>
+                            <a href="#" onClick="loadContent(3)"><i class="fa fa-chevron-right"></i> Create Group</a>
+                        </li>
+                        <li>
+                            <a href="#" onClick="loadContent(7)"><i class="fa fa-chevron-right"></i> View Groups</a>
+                        </li>
+                    </ul>
                 </li>
+               
+                <!--Departments-->
+                
+                <li data-toggle="collapse" data-target="#departments-list" class="collapsed" id="departments">
+                    <a href="#">Departments<i class="fa fa-chevron-down" style="margin-left: 102px;"></i></a>
+                </li>  
+                
+              
                 <li>
-                    <a href="#" onClick="loadContent(7)">View Groups</a>
-                </li>
+                    <ul class="sub-menu collapse collapsable" id="departments-list">
+                        <li>
+                            <a href="#" onClick="loadContent(8)"><i class="fa fa-chevron-right"></i> Create Department</a>
+                        </li>
+                        <li>
+                            <a href="#" onClick="loadContent(9)"><i class="fa fa-chevron-right"></i> View Departments</a>
+                        </li>
+                    </ul>
+                </li> 
+                
+                <!--Processes-->
+                
+                <li data-toggle="collapse" data-target="#processes-list" class="collapsed" id="processes">
+                  <a href="#">Processes<i class="fa fa-chevron-down" style="margin-left: 117px;"></i></a>
+                </li>  
+                
+              
                 <li>
-                    <a href="#" onClick="loadContent(8)">Create Department</a>
+                    <ul class="sub-menu collapse collapsable" id="processes-list">
+                        <li>
+                            <a href="#" onClick="loadContent(4)"><i class="fa fa-chevron-right"></i> Create Process</a>
+                        </li>
+                        <li>
+                            <a href="#" onClick="#"><i class="fa fa-chevron-right"></i> View Processes</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="#" onClick="loadContent(9)">View Departments</a>
-                </li>
-                <li>
-                    <a href="#" onClick="loadContent(4)">Create Process</a>
-                </li>
-                <li>
-                    <a href="#">View Processes</a>
-                </li>
+                
+                
+                <!--Resources-->
                 
                 <li>
                     <a href="#">Resources</a>
                 </li>
                 <li>
                     <a href="#">Concept Map</a>
-                </li>
-   
+                
+   </li>
                 
             </ul>
         </div>
@@ -194,8 +239,41 @@
         <script src="jquery.js"></script>
             
         <!-- Custom Script -->
+        <script>
+            $(document).ready(function(){
+                $("#projects").click(function(){
+                    $("#projects-list").toggle();
+                });
+                $("#groups").click(function(){
+                    $("#groups-list").toggle();
+                });
+                $("#departments").click(function(){
+                    $("#departments-list").toggle();
+                });
+                $("#processes").click(function(){
+                    $("#processes-list").toggle();
+                });
+                $(".sidebar-nav > li").click(function(){
+                     if($(this).closest("li").children("ul").length) {
+                        // the clicked on <li> has a <ul> as a direct child
+                     }
+                     else{
+                        $('ul li').removeClass('active');
+                        $(this).addClass('active');
+                     }
+                   
+                });
+                $(".sub-menu > li").click(function(){
+                    $('ul li').removeClass('active');
+                    $(this).addClass('active');
+                      
+                });
+                
+            });
+        </script>
+        
         <script>    
-            document.getElementById('focus').focus();
+            //document.getElementById('focus').focus();
                 
             $("#menu-toggle").click(function(e) {
                 e.preventDefault();
