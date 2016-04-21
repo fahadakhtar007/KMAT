@@ -1,0 +1,43 @@
+.sub-menu {
+    /*position: absolute;*/
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sub-menu li {
+    text-indent: 10px; // arrows will add indent, this will override 20px
+    line-height: 30px; // shorter than parent list
+}
+
+.sub-menu li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sub-menu li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sub-menu li a:active,
+.sub-menu li a:focus {
+    text-decoration: none;
+    color: #fff; // text-xolor = white
+    /*background: #e74c3c; // red*/
+}
+
+.button {
+    display: block;
+    width: 115px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
