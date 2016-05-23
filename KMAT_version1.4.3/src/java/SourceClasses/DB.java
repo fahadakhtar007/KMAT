@@ -25,10 +25,21 @@ import java.util.List;
 public class DB {
         public Connection connectDB()
 	{
-    
-	    String url = "jdbc:mysql://localhost:3307/";
-	    String user = "Asbah";
-	    String password = "149103";
+
+/*TODO: show error messages if 
+		1) database does not connect
+		2) query(ies) cannot be executed
+
+		3) setting up database options (url, username, password)
+*/
+		
+	    //String url = "jdbc:mysql://localhost:3307/";
+		String url = "jdbc:mysql://localhost:3306/";
+	    //String user = "Asbah";
+		String user = "root";
+	    //String password = "149103";
+		String password = "sabd321";
+		
 	    
 	    try
 	    {
